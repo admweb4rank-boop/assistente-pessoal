@@ -1,0 +1,238 @@
+# TB Personal OS - Instruções de Desenvolvimento
+
+> Este arquivo contém as diretrizes e contexto para o desenvolvimento contínuo do projeto.
+
+## 📋 Visão do Projeto
+
+**TB Personal OS** é um assistente pessoal operacional e evolutivo que funciona como um "segundo cérebro":
+- **Captura** entradas via Telegram, web, links, arquivos
+- **Processa** com IA (Gemini) para classificar, extrair entidades e sugerir ações
+- **Executa** ações via integrações (Google Calendar, Gmail, Drive, Tasks)
+- **Aprende** detectando padrões e recomendando melhorias
+- **Evolui** continuamente baseado em dados reais
+
+## 🏗️ Stack Tecnológico
+
+### Backend
+- **Python 3.11+** com FastAPI 0.108
+- **Supabase** (Auth, PostgreSQL 15+, Storage)
+- **Gemini API** (LLM principal)
+- **python-telegram-bot v13.x** (polling mode)
+- **Structlog** para logging estruturado
+
+### Frontend
+- **React 18+** com Vite
+- **TypeScript** strict mode
+- **TailwindCSS** + HeadlessUI
+- **React Query** para data fetching
+- **Zustand** para state management
+
+### Database
+- PostgreSQL via Supabase
+- 18 tabelas definidas em `supabase/migrations/00001_initial_schema.sql`
+- ENUMs para status e categorias
+
+## 📁 Estrutura do Projeto
+
+```
+backend/
+├── app/
+│   ├── main.py                 # Entry point FastAPI
+│   ├── core/
+│   │   ├── config.py           # Settings (Pydantic)
+│   │   └── logging_config.py   # Structlog setup
+│   ├── api/
+│   │   └── v1/
+│   │       ├── __init__.py     # Router principal
+│   │       ├── dependencies/   # Auth, DB connections
+│   │       └── endpoints/      # Rotas por módulo
+│   ├── models/                 # Pydantic schemas
+│   ├── services/               # Business logic
+│   │   ├── gemini_service.py
+│   │   ├── telegram_service.py
+│   │   ├── inbox_service.py
+│   │   └── bot_handler.py
+│   ├── integrations/           # Google APIs, etc
+│   └── utils/
+├── tests/
+└── requirements.txt
+
+frontend/
+├── src/
+│   ├── components/             # Componentes reutilizáveis
+│   ├── pages/                  # Páginas/views
+│   ├── services/               # API clients
+│   ├── hooks/                  # Custom hooks
+│   ├── contexts/               # React Context
+│   ├── types/                  # TypeScript types
+│   └── utils/
+└── package.json
+```
+
+## 🎯 Plano de Implementação
+
+### FASE 1: Fundação Backend (Atual)
+- [x] Estrutura base FastAPI
+- [x] Configurações centralizadas
+- [x] Schema do banco de dados
+- [ ] **ETAPA 1.1**: Unificar e corrigir bot handler
+- [ ] **ETAPA 1.2**: Criar endpoints API (inbox, tasks)
+- [ ] **ETAPA 1.3**: Integrar classificação Gemini real
+- [ ] **ETAPA 1.4**: Middleware de autenticação
+
+### FASE 2: Integrações Google
+- [ ] **ETAPA 2.1**: Google OAuth flow
+- [ ] **ETAPA 2.2**: Calendar sync (read)
+- [ ] **ETAPA 2.3**: Calendar create events
+- [ ] **ETAPA 2.4**: Gmail básico
+
+### FASE 3: Bot Telegram Completo
+- [ ] **ETAPA 3.1**: Comandos de tasks
+- [ ] **ETAPA 3.2**: Comandos de check-in
+- [ ] **ETAPA 3.3**: Rotinas automáticas (manhã/noite)
+- [ ] **ETAPA 3.4**: Contexto de memória
+
+### FASE 4: Frontend MVP
+- [ ] **ETAPA 4.1**: Layout e navegação
+- [ ] **ETAPA 4.2**: Autenticação Supabase
+- [ ] **ETAPA 4.3**: Dashboard inbox
+- [ ] **ETAPA 4.4**: Tasks view
+
+### FASE 5: ML e Insights
+- [ ] **ETAPA 5.1**: Job scheduler
+- [ ] **ETAPA 5.2**: Padrões de produtividade
+- [ ] **ETAPA 5.3**: Recomendações simples
+
+## 🔧 Padrões de Código
+
+### Python/Backend
+```python
+# Imports organizados
+from typing import List, Optional, Dict
+from datetime import datetime
+import structlog
+
+# Logger por módulo
+logger = structlog.get_logger(__name__)
+
+# Async por padrão
+async def my_function() -> dict:
+    """Docstring obrigatória."""
+    pass
+
+# Type hints obrigatórios
+def process_item(item_id: str, data: dict) -> Optional[dict]:
+    pass
+```
+
+### Endpoints API
+```python
+# Padrão de resposta
+{
+    "success": True,
+    "data": {...},
+    "message": "Operation completed"
+}
+
+# Padrão de erro
+{
+    "success": False,
+    "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "Description"
+    }
+}
+```
+
+### Telegram Bot
+```python
+# Comandos seguem padrão
+def command_handler(update: Update, context: CallbackContext):
+    """Handler para /comando"""
+    user = update.effective_user
+    
+    # Verificar owner
+    if user.id != self.owner_chat_id:
+        return
+    
+    # Processar...
+    update.message.reply_text("Resposta", parse_mode=ParseMode.MARKDOWN)
+```
+
+## 🗄️ Tabelas Principais
+
+| Tabela | Uso |
+|--------|-----|
+| `users` | Usuários do sistema |
+| `profiles` | Preferências e configurações |
+| `telegram_chats` | Vínculo Telegram ↔ User |
+| `inbox_items` | Entrada unificada |
+| `tasks` | Tarefas e to-dos |
+| `habits` | Hábitos rastreados |
+| `checkins` | Registros de métricas |
+| `projects` | Projetos e iniciativas |
+| `contacts` | Pessoas e empresas |
+| `content_ideas` | Ideias de conteúdo |
+| `assistant_logs` | Logs de todas as ações |
+| `recommendations` | Recomendações do sistema |
+
+## 🔐 Variáveis de Ambiente Necessárias
+
+```env
+# Application
+APP_ENV=development
+API_SECRET_KEY=
+
+# Supabase
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_KEY=
+
+# Google
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=
+GOOGLE_SCOPES=calendar,gmail,drive
+
+# Gemini
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-pro
+
+# Telegram
+TELEGRAM_BOT_TOKEN=
+OWNER_TELEGRAM_CHAT_ID=
+```
+
+## 📝 Comandos Úteis
+
+```bash
+# Desenvolvimento
+cd backend && uvicorn app.main:app --reload
+
+# Bot Telegram (polling)
+cd backend && python -m app.bot_simple
+
+# Frontend
+cd frontend && npm run dev
+
+# Docker
+docker-compose up -d
+```
+
+## ⚠️ Pontos de Atenção
+
+1. **Bot usa v13.x**: Sintaxe diferente da v20+, usar `Updater` e `dispatcher`
+2. **Supabase Auth**: Usar JWT do Supabase para autenticação
+3. **Gemini API**: Verificar rate limits e custos
+4. **Timezone**: Sempre usar `America/Sao_Paulo` como padrão
+
+## 🎯 Objetivo Atual
+
+Implementar a **FASE 1** completamente para ter um backend funcional com:
+- Bot Telegram processando mensagens com IA
+- API REST para frontend
+- Classificação inteligente via Gemini
+- Autenticação básica
+
+---
+*Última atualização: 18/01/2026*

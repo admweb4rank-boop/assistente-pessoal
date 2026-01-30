@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-dark-border;
+  }
+
+  body {
+    @apply bg-dark-bg-primary text-dark-text-primary antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  #root {
+    @apply w-full min-h-screen;
+  }
+}
+
+@layer components {
+  /* Glass Card Component V2 */
+  .glass-card {
+    @apply bg-dark-bg-secondary/50 backdrop-blur-2xl border rounded-2xl shadow-glass;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-glass-lg hover:scale-[1.02];
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card-hover:hover {
+    border-color: rgba(168, 85, 247, 0.3);
+  }
+
+  /* Gradient Button V2 */
+  .btn-gradient {
+    @apply relative px-6 py-3 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #A855F7 0%, #10B981 100%);
+  }
+
+  .btn-gradient:hover {
+    @apply shadow-glow-purple transform scale-105;
+  }
+
+  .btn-gradient::before {
+    content: '';
+    @apply absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300;
+  }
+
+  .btn-gradient:hover::before {
+    @apply translate-y-0;
+  }
+
+  /* Gradient Text V2 */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #A855F7 0%, #10B981 100%);
+  }
+
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00e676 0%, #00c853 100%);
+  }
+
+  /* Neon Glow Effect */
+  .neon-glow {
+    @apply relative;
+  }
+
+  .neon-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl blur-xl opacity-50;
+    background: inherit;
+    z-index: -1;
+  }
+
+  /* Animated Background */
+  .bg-animated {
+    background: linear-gradient(180deg, #0A0B0E 0%, #12141A 100%);
+    position: relative;
+  }
+
+  .bg-animated::before {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background: radial-gradient(at 40% 20%, hsla(258,89%,62%,0.4) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,68%,75%,0.4) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355,100%,93%,0.4) 0px, transparent 50%);
+    animation: float 10s ease-in-out infinite;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-dark-bg-secondary rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-brand-purple-600 rounded-full hover:bg-brand-purple-500;
+  }
+
+  /* Input Styles */
+  .input-glass {
+    @apply glass-card px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-purple-500/50 focus:border-brand-purple-500/50 transition-all;
+  }
+
+  /* Card Grid */
+  .card-grid {
+    @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  /* Section Heading */
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gradient;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-purple {
+    @apply badge border;
+    background-color: rgba(168, 85, 247, 0.2);
+    color: #C084FC;
+    border-color: rgba(168, 85, 247, 0.3);
+  }
+
+  .badge-green {
+    @apply badge border;
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+
+  /* Stats Card */
+  .stat-card {
+    @apply glass-card p-6 hover:shadow-glass-lg transition-all duration-300 animate-slide-up;
+  }
+
+  .stat-value {
+    @apply text-4xl font-bold text-gradient mb-2;
+  }
+
+  .stat-label {
+    @apply text-dark-text-secondary text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .clip-path-card {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+  }
+}

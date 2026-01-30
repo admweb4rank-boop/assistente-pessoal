@@ -1,0 +1,270 @@
+[
+  {
+    "scenario": "Planejamento de Dieta",
+    "user_message": "Quero ajuda para criar uma dieta para o mês de fevereiro... A ideia é secar barriga, tirar gordura ruim do corpo, e construir massa magra, músculo e definição, além de aumento na disposição e energia.",
+    "bot_response": "Olá! Que ótimo objetivo para Fevereiro! Entendi perfeitamente: você quer uma",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 5,
+      "progressao": 0,
+      "empatia": 5
+    },
+    "total_score": 18,
+    "avg_score": 3.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não fez perguntas para avançar a conversa"
+    ]
+  },
+  {
+    "scenario": "Planejamento de Dieta",
+    "user_message": "Beleza, vamos conversar, faça perguntas específicas e eu responderei",
+    "bot_response": "Olá! Ótimo, estou pronto para ajudar. 😊 Para começarmos, qual é a principal coisa que você gostaria de organizar ou resolver hoje?",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 5,
+      "progressao": 4,
+      "empatia": 0
+    },
+    "total_score": 17,
+    "avg_score": 3.4,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Planejamento de Dieta",
+    "user_message": "Sim, tenho algumas preferências. Gosto de frango, ovos, batata doce, mas não curto muito peixe.",
+    "bot_response": "Entendido! Anotei suas preferências alimentares: você gosta de frango, ovos e",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 5,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 13,
+    "avg_score": 2.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Salvar na Inbox",
+    "user_message": "Oi",
+    "bot_response": "Olá! 👋 Igor aqui. Como posso te ajudar hoje? Tenho algumas sugestões se precisar de um ponto de partida!",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 5,
+      "progressao": 4,
+      "empatia": 0
+    },
+    "total_score": 17,
+    "avg_score": 3.4,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Salvar na Inbox",
+    "user_message": "Beleza",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Salvar na Inbox",
+    "user_message": "E vc ?",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Discussão de Projeto",
+    "user_message": "Preciso organizar o projeto do app de finanças",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Discussão de Projeto",
+    "user_message": "É um app para controle pessoal, com categorias e gráficos",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Discussão de Projeto",
+    "user_message": "Sim, vou precisar de backend, frontend e banco de dados",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Conversa Natural → Tarefa",
+    "user_message": "Nossa, lembrei que tenho que ligar pro dentista amanhã",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Conversa Natural → Tarefa",
+    "user_message": "É pra marcar uma limpeza, já tá atrasado",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Consulta de Informações",
+    "user_message": "Quais são minhas tarefas pra hoje?",
+    "bot_response": "[Gemini indisponível] Mensagem recebida: \nVocê é IGOR, um assistente pessoal inteligente e proativo.\n\nSua personalidade:\n- Amigável, mas foca...",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  },
+  {
+    "scenario": "Consulta de Informações",
+    "user_message": "E as de alta prioridade?",
+    "bot_response": "Olá! 👋 No momento, não tenho nenhuma tarefa ou item específico marcado como \"alta prioridade\"",
+    "scores": {
+      "naturalidade": 8,
+      "contexto": 0,
+      "acao": 0,
+      "progressao": 0,
+      "empatia": 0
+    },
+    "total_score": 8,
+    "avg_score": 1.6,
+    "grade": "F (Insuficiente)",
+    "issues": [
+      "❌ Não usou contexto anterior",
+      "❌ Não propôs ação ou próximos passos",
+      "❌ Não fez perguntas para avançar a conversa",
+      "❌ Faltou empatia ou compreensão emocional"
+    ]
+  }
+]
